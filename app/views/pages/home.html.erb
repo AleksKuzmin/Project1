@@ -5,14 +5,5 @@
 
 <h2> You have got <%=link_to pluralize(@current_user.bookings.count, 'booking'), bookings_path  %> available.</h2>
 
-<% if @current_user.instructor? %>
 <h2> You have got <%= link_to pluralize(@current_user.lessons.count, 'class'),lessons_path %> available.</h2>
-
-
-
-<% end %>
-
-
-
-
 <% end %>

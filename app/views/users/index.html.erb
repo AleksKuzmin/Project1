@@ -1,7 +1,8 @@
 <h1>All Users</h1>
 <h2><%= User.count %> users </h2>
-
 <% @users.each do |user| %>
-<p><%= link_to user.email, user_path(user.id) %></p>
+<p>
+<%= user.email %>
 
+</p>
 <% end %>
