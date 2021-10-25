@@ -6,7 +6,9 @@ class LessonsController < ApplicationController
   # def home
   #     @lessons = @current_user.lessons
   # end
+  def show
 
+  end
 
   def new
     @lesson = Lesson.new
@@ -20,21 +22,22 @@ class LessonsController < ApplicationController
 
   end
 
-def edit
-@lesson = Lesson.find params[:id]
-end
+  def edit
 
-def update
-  lesson= Lesson.find params[:id]
-  lesson.update lesson_params
-  redirect_to lesson
-end
+  @lesson = Lesson.find params[:id]
+  end
 
-def destroy
-  lesson=Lesson.find params[:id]
-  lesson.destroy
-  redirect_to lessons_path
-end
+  def update
+    lesson= Lesson.find params[:id]
+    lesson.update lesson_params
+    redirect_to lessons_path
+  end
+
+  def destroy
+    lesson=Lesson.find params[:id]
+    lesson.destroy
+    redirect_to lessons_path
+  end
 
   private
   def lesson_params
