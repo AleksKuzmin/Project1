@@ -1,0 +1,9 @@
+<h1>New booking</h1>
+
+
+<%= form_for @booking do |f| %>
+
+<%= f.label :lesson_id %>
+<%= f.select :lesson_id, Lesson.pluck(:title, :id), :include_blank => true %>
+<%= f.submit "Make a new booking" %>
+<% end %>

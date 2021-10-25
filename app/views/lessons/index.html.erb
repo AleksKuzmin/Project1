@@ -1,0 +1,10 @@
+<h1>All classes</h1>
+
+<h1>Namaste, <%= @current_user.email %>!</h1>
+<h2> You have got <%= pluralize(@current_user.lessons.count, 'class')  %> available.</h2>
+
+<% @current_user.lessons.each do |lesson| %>
+<p>
+<%= lesson.title %>
+</p>
+<% end %>
