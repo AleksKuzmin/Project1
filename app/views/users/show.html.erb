@@ -1,7 +1,15 @@
 <% if @user.present? && @user.instructor? %>
-<h1>User <%= @user.email %> has the following classes scheduled</h1>
+<h1>You have the following classes scheduled</h1>
 <% @user.lessons.each do |lesson| %>
 <p><%= lesson.title %></p>
+<% end %>
+
+<% if @user.present? %>
+<h1>You have the following bookings</h1>
+<% @user.bookings.each do |booking| %>
+<p><%= booking.title %></p>
+<% end %>
+
 
 <% end %>
 <% end %>

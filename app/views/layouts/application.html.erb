@@ -23,7 +23,7 @@
 
 
       <%= link_to "New bookings", new_booking_path %>
-      <%= link_to "Your profile", user_path(@current_user) %>
+      <%= link_to "Your profile", edit_user_path(@current_user) %>
       <%= link_to "Log out #{ @current_user.email}", login_path, :method => 'delete' %>
       <% else %>
       <%= link_to "Sign up", new_user_path %>
