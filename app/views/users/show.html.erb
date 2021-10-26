@@ -1,4 +1,7 @@
-<% if @current_user.present? %>
-<h1>Welcome back <%= @current_user.email %></h1>
+<% if @user.present? && @user.instructor? %>
+<h1>User <%= @user.email %> has the following classes scheduled</h1>
+<% @user.lessons.each do |lesson| %>
+<p><%= lesson.title %></p>
 
+<% end %>
 <% end %>

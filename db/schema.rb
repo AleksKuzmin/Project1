@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_24_035719) do
+ActiveRecord::Schema.define(version: 2021_10_26_013032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 2021_10_24_035719) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "lesson_id"
+    t.date "date"
+    t.time "time"
+    t.text "description"
+    t.text "image"
+    t.text "location"
+    t.text "contact"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -29,6 +35,12 @@ ActiveRecord::Schema.define(version: 2021_10_24_035719) do
     t.integer "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
+    t.time "time"
+    t.text "description"
+    t.text "location"
+    t.text "contact"
+    t.text "image"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,6 +50,14 @@ ActiveRecord::Schema.define(version: 2021_10_24_035719) do
     t.string "password_digest"
     t.boolean "admin", default: false
     t.boolean "instructor", default: false
+    t.text "name"
+    t.text "address"
+    t.integer "phonenumber"
+    t.text "image"
+    t.text "description"
+    t.text "location"
+    t.text "about"
+    t.date "dob"
   end
 
 end

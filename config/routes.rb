@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
     # get "/lessons/new"
     # get 'lessons/new'
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     post "login" => 'session#create'
     delete '/login'=> 'session#destroy'
 
-    resources :bookings, :only => [:new, :create]
+    resources :bookings
     resources :lessons
     get "/admin" =>  'admin#home'
     get '/bookings' => 'bookings#home'

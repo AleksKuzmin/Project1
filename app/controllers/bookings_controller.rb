@@ -1,6 +1,9 @@
 class BookingsController < ApplicationController
   before_action :check_for_login, :except => [:new]
 
+  def index
+    @bookings=Booking.all
+  end
   def home
       @bookings = @current_user.bookings
   end
@@ -18,6 +21,28 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
 
   end
+
+  def edit
+
+  @booking = Booking.find params[:id]
+  end
+
+  def update
+    booking= Booking.find params[:id]
+    booking.update booking_params
+    redirect_to bookings_path
+  end
+
+  def destroy
+    booking=Booking.find params[:id]
+    booking.destroy
+    redirect_to bookings_path
+  end
+
+
+
+
+
   private
   def booking_params
     params.require(:booking).permit(:title)
