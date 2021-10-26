@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     # get 'lessons/new'
 
     root :to => "pages#home"
-    resources :users, :only => [:index, :new, :create, :show]
+    resources :users
 
     get "/login" => 'session#new'
     post "login" => 'session#create'
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
     get "/admin" =>  'admin#home'
     get '/bookings' => 'bookings#home'
     get '/lessons' => 'lessons#home'
+    get '/users' => 'users#home'
 end

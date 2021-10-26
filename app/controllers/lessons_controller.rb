@@ -23,7 +23,6 @@ class LessonsController < ApplicationController
   end
 
   def edit
-
   @lesson = Lesson.find params[:id]
   end
 
@@ -41,6 +40,6 @@ class LessonsController < ApplicationController
 
   private
   def lesson_params
-    params.require(:lesson).permit(:title)
+    params.require(:lesson).permit(:title,:user_id,:booking_id,:date,:description,:location,:contact, :image)
   end
 end

@@ -1,6 +1,7 @@
 <h1>All classes</h1>
 
 <h1>Namaste, <%= @current_user.email %>!</h1>
+
 <h2> You have got <%= pluralize(@current_user.lessons.count, 'class')  %> available.</h2>
 
 <% @current_user.lessons.each do |lesson| %>
@@ -13,3 +14,5 @@
   <%= link_to "Delete lesson", lesson, :method => 'delete', :data => { :confirm => "Are you sure?"} %>
 </div>
 <% end %>
+
+<iframe width='50%' height='300px' src="https://api.mapbox.com/styles/v1/alexhappylucky/ckv7f9a3a8jx914o3vnrwyqlu.html?title=false&access_token=pk.eyJ1IjoiYWxleGhhcHB5bHVja3kiLCJhIjoiY2t2N2Y2MnFjMW9xZTJucDY4bGRnMHZwbyJ9.rQR2wnOUTCzRt9oI7CstQA&zoomwheel=false#9/37.78/-122.4241" title="Streets" style="border:none;"></iframe>

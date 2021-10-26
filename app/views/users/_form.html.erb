@@ -1,0 +1,21 @@
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label "Phone number:" %>
+  <%= f.number_field :phonenumber %>
+  <%= f.label :about %>
+  <%= f.text_field :about %>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :dob %>
+  <%= f.date_field :dob %>
+
+
+  <%= f.submit %>
+<% end %>

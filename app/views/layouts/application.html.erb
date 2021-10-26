@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -22,19 +23,22 @@
 
 
       <%= link_to "New bookings", new_booking_path %>
+      <%= link_to "Your profile", user_path(@current_user) %>
       <%= link_to "Log out #{ @current_user.email}", login_path, :method => 'delete' %>
       <% else %>
       <%= link_to "Sign up", new_user_path %>
       <%= link_to "Sign in", login_path %>
       <% end %>
 
-      
+
       <% if @current_user.present? && @current_user.instructor? %>
       <%= link_to "New Classes", new_lesson_path %>
       <% end %>
 
 
     </nav>
+
+
     <%= yield %>
   </body>
 </html>

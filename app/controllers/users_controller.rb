@@ -1,21 +1,22 @@
 class UsersController < ApplicationController
 before_action :check_for_admin, :only => [:index]
 
-
-   def index
+  def home
+  end
+  def index
      @users = User.all
-   end
+  end
 
   def show
      @user=User.find params[:id]
   end
 
 
-   def new
+  def new
      @user =User.new
-   end
+  end
 
-   def create
+  def create
      @user = User.new user_params
     if @user.save
        session[:user_id]= @user.id
@@ -23,10 +24,23 @@ before_action :check_for_admin, :only => [:index]
     else
        render :new
     end
-   end
+  end
+
+
+  def edit
+   @user = User.find params[:id]
+
+  end
+
+  def update
+     user= User.find params[:id]
+     user.update user_params
+     redirect_to user_path
+  end
 
    private
-   def user_params
-     params.require(:user).permit(:email, :password, :password_confirmation, :instructor)
-   end
+  def user_params
+     params.require(:user).permit(:email, :password, :password_confirmation, :instructor,:name,:address,:phonenumber,:description,
+     :about,:image,:dob,:location)
+  end
 end
