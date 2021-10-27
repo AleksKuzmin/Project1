@@ -7,7 +7,9 @@ class BookingsController < ApplicationController
   def home
       @bookings = @current_user.bookings
   end
-
+  def show
+    @booking = Booking.find params[:id]
+  end
 
   def new
     @booking = Booking.new

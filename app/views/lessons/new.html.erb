@@ -2,7 +2,13 @@
 
 
 <%= form_for @lesson do |f| %>
-<%= f.label :lesson %>
+<%= f.label "Class" %>
 <%= f.text_field :title %>
+<%= f.label :date %>
+<%= f.date_field :date %>
+<%= f.label :time %>
+<%= f.time_field :time %>
+<%= f.label :location %>
+<%= f.text_field :location %>
 <%= f.submit "Create a new class" %>
 <% end %>

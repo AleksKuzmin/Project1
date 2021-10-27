@@ -10,8 +10,9 @@
 </p>
 
 <div class=“controls”>
-  <%= link_to "Edit lesson", edit_lesson_path(lesson) %>
-  <%= link_to "Delete lesson", lesson, :method => 'delete', :data => { :confirm => "Are you sure?"} %>
+  <%= link_to "View class", lesson %>
+  <%= link_to "Edit class", edit_lesson_path(lesson) %>
+  <%= link_to "Delete class", lesson, :method => 'delete', :data => { :confirm => "Are you sure?"} %>
 </div>
 <% end %>
 

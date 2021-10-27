@@ -7,7 +7,7 @@ class LessonsController < ApplicationController
   #     @lessons = @current_user.lessons
   # end
   def show
-
+  @lesson = Lesson.find params[:id]
   end
 
   def new
