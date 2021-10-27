@@ -15,8 +15,9 @@
 </ul>
 
 
-
-
+<% if @current_user.admin? %>
+    <%= link_to "Remove User", @user, :method => 'delete', :data => {:confirm => "Are you sure, you want to remove user permanently?"}, :class => "remove" %>
+  <% end %>
 
 
 
