@@ -4,9 +4,7 @@
 <h2> You have got <%= pluralize(@current_user.bookings.count, 'booking')  %> available.</h2>
 
 <% @current_user.bookings.each do |booking| %>
-<p>
-<%= booking.lesson.title %>
-</p>
+<p><%= booking.lesson.title %></p>
 
 <div class=“controls”>
   <%= link_to "View booking", booking%>

@@ -1,9 +1,5 @@
 <h1>Hi <%= @current_user.email %></h1>
 <h2> You have got <%= pluralize(@current_user.lessons.count, 'class')  %> available.</h2>
 <% @lessons.each do |lesson| %>
-<p>
-<%= lesson.title %>
-
-
-</p>
+<p><%= lesson.title %></p>
 <% end %>

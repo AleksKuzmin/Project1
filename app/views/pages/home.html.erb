@@ -5,12 +5,11 @@
 <%= image_tag @current_user.image if @current_user.image.present? %>
 
 
-<h2> You have got <%=link_to pluralize(@current_user.bookings.count, 'booking'), bookings_path  %>
+<h2> You have got <%=link_to pluralize(@current_user.bookings.count,    'booking'), bookings_path  %>
 
   <% if @current_user.instructor? %>
   <p>and</p>
-   <%= link_to pluralize(@current_user.lessons.count, 'class'),lessons_path %>
+   <%= link_to pluralize(@current_user.lessons.count, 'class'),lessons_path %> available.
   <% end %>
-
-  available.</h2>
+  </h2>
 <%end %>

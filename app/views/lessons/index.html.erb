@@ -5,9 +5,7 @@
 <h2> You have got <%= pluralize(@current_user.lessons.count, 'class')  %> available.</h2>
 
 <% @current_user.lessons.each do |lesson| %>
-<p>
-<%= lesson.title %>
-</p>
+<p><%= lesson.title %></p>
 
 <div class=“controls”>
   <%= link_to "View class", lesson %>
