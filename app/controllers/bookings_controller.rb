@@ -9,7 +9,24 @@ class BookingsController < ApplicationController
   end
   def show
     @booking = Booking.find params[:id]
-    
+    @client = OpenStreetMap::Client.new
+      #create an object
+      @search = @client.search(q: "#{@booking.lesson.suburb}, #{@booking.lesson.postcode}",format: 'json', addressdetails: '1', accept_language: 'en')
+      #extract value from JSON response
+      if @search.any?
+        @bounding_box = @search[0]["boundingbox"]
+        @south_latitude = @bounding_box[0]
+        @north_latitude = @bounding_box[1]
+        @west_longitude = @bounding_box[2]
+        @east_longitude = @bounding_box[3]
+
+      #arrange longitude and latitude in bounding box as, bbox = min Longitude , min Latitude , max Longitude , max Latitude
+      @bbox = @west_longitude + '%2C' + @south_latitude + '%2C' + @east_longitude + '%2C' + @north_latitude
+      #extract value longitude and latitude values for marker
+      @longitude = @search[0]["lon"]
+      @latitude = @search[0]["lat"]
+      @marker = @longitude + '%2C' + @latitude
+    end
   end
 
   def new

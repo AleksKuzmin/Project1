@@ -59,6 +59,6 @@ end
 
   private
   def lesson_params
-    params.require(:lesson).permit(:title,:user_id,:booking_id,:date,:description,:location,:contact, :image, :suburb, :postcode)
+    params.require(:lesson).permit(:title,:user_id,:booking_id,:date,:description,:location,:contact, :image, :suburb, :postcode, :time)
   end
 end

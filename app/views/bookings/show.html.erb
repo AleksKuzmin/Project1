@@ -4,3 +4,13 @@
 <h2><%= @booking.lesson.time %></h2>
 <h2><%= @booking.lesson.suburb %></h2>
 <h2><%= @booking.lesson.postcode %></h2>
+
+<div > <br> <br>
+        <h3>Location</h3>
+        <!-- used iframe to diaply openstreetmap -->
+        <iframe width="425" height="350" frameborder="0" scrolling="no"
+          marginheight="0" marginwidth="0"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=<%= @bbox %>&amp;layer=mapnik&amp;marker=<%= @marker%>"
+          style="border: 1px solid black">
+        </iframe>
+</div>
