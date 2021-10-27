@@ -1,6 +1,6 @@
 <% if @current_user.present? %>
 <h1>Namaste, <%= @current_user.email %>!</h1>
-
+<%= image_tag @current_user.image %>
 
 
 <h2> You have got <%=link_to pluralize(@current_user.bookings.count, 'booking'), bookings_path  %> available.</h2>

@@ -35,7 +35,8 @@ before_action :check_for_admin, :only => [:index]
   def update
      user= User.find params[:id]
      user.update user_params
-     redirect_to user_path
+
+     redirect_to edit_user_path(user)
   end
 
    private

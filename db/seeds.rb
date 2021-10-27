@@ -5,13 +5,6 @@ u3= User.create :email => 'craigsy@ga.co', :password => 'chicken', :instructor =
 
 puts "#{User.count} users"
 
-Booking.destroy_all
-b1=Booking.create :title => "Today"
-b2=Booking.create :title => "Tomorrow"
-b3=Booking.create :title => 'The day after Tomorrow'
-
-puts "#{Booking.count} bookings"
-
 
 Lesson.destroy_all
 l1=Lesson.create :title =>"Iyengar yoga"
