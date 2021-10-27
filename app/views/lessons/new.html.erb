@@ -8,7 +8,10 @@
 <%= f.date_field :date %>
 <%= f.label :time %>
 <%= f.time_field :time %>
-<%= f.label :location %>
-<%= f.text_field :location %>
+<%= f.label :suburb %>
+<%= f.text_field :suburb %>
+<%= f.label :postcode %>
+<%= f.number_field :postcode%>
+
 <%= f.submit "Create a new class" %>
 <% end %>

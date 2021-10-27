@@ -38,7 +38,11 @@ before_action :check_for_admin, :only => [:index]
 
      redirect_to edit_user_path(user)
   end
-
+  def destroy
+    lesson=User.find params[:id]
+    user.destroy
+    redirect_to users_path
+  end
    private
   def user_params
      params.require(:user).permit(:email, :password, :password_confirmation, :instructor,:name,:address,:phonenumber,:description,
