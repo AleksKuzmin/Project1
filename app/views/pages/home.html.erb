@@ -1,5 +1,5 @@
 
-<h1>Namaste, <%= @current_user.email %>!</h1>
+<h1>Namaste, <%= link_to @current_user.name, user_path(@current_user.id) %>!</h1>
 <%= image_tag @current_user.image if @current_user.image.present? %>
 
 
