@@ -13,7 +13,7 @@ This app is made with Ruby on Rails using different models and associations.
 
 ## Link to the app
 
-#### [https://projectyoga4.herokuapp.com
+#### https://projectyoga4.herokuapp.com
 
 ## Models
 
