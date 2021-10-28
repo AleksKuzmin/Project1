@@ -1,5 +1,5 @@
 <div class="div-color">
-<h1>All classes</h1>
+<h1>All classes,</h1>
 
 <h1>Namaste, <%= @current_user.email %>!</h1>
 
@@ -11,7 +11,7 @@
 <div class=“controls”>
   <%= link_to "View class", lesson %>
   <%= link_to "Edit class", edit_lesson_path(lesson) %>
-  <%= link_to "Delete class", lesson, :method => 'delete', :data => { :confirm => "Are you sure?"} %>
+  <%= link_to "Delete class", lesson, :method => 'delete', :data => { :confirm => "Are you sure?"} %> <br><br>
 </div>
 <% end %>
 </div>
