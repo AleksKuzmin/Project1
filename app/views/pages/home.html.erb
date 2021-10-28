@@ -1,8 +1,8 @@
-<% if @current_user.present? %>
+<% if @current_user.present?%>
 
 <h1>Namaste <%= link_to @current_user.name, user_path(@current_user.id) %>!</h1>
 
-<%= image_tag @current_user.image if @current_user.image.present? %>
+<%= image_tag @current_user.image, :class => 'thumb' if @current_user.image.present? %>
 
 
 <h2> You have got <%=link_to pluralize(@current_user.bookings.count,    'booking'), bookings_path  %>
