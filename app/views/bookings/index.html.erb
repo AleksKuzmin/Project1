@@ -1,6 +1,5 @@
 
 <div class="div-color">
-  <h1>All bookings,</h1>
   <h1>Namaste, <%= @current_user.name %>!</h1>
   <h2> You have got <%= pluralize(@current_user.bookings.count, 'booking')  %> available.</h2>
 

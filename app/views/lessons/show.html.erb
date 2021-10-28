@@ -11,7 +11,6 @@
     <li>Postcode:<%= @lesson.postcode%></li>
     <li>instructor<%= @lesson.contact%></li>
   </ul>
-  </div>
   <div >
     <h3>Location</h3>
     <!-- used iframe to display openstreetmap -->
@@ -20,4 +19,5 @@
       src="https://www.openstreetmap.org/export/embed.html?bbox=<%= @bbox %>&amp;layer=mapnik&amp;marker=<%= @marker%>"
       style="border: 1px solid black">
     </iframe>
+  </div>
   </div>
