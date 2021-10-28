@@ -1,7 +1,10 @@
 <div class="div-color">
   <%= form_for @user do |f| %>
 
-
+  <div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name,:class => 'form-control' %>
+  </div>
   <div class="form-group">
     <%= label_tag :email %>
     <%= email_field_tag :email,nil,:class => 'form-control' %>
