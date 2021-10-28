@@ -10,16 +10,22 @@ position: fixed;
 bottom:0;
 right: 0;
 }
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
 
 .thumb {
   width: 12em;
 }
+.controls {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+padding-bottom: 5%
+}
 
-@media screen and (max-width:600px){
-  body {
-    background-color: aliceblue;
-  }
-  }
+
 .div-color {
   background-color: aliceblue;
   opacity: 0.5;
@@ -27,4 +33,7 @@ right: 0;
   border-radius: 25px;
   width: auto;
   padding: 10px;
+}
+.div-margin {
+  margin-top: 40px;
 }
