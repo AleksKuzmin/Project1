@@ -8,8 +8,8 @@
 <h2> You have got <%=link_to pluralize(@current_user.bookings.count,    'booking'), bookings_path  %>
 
   <% if @current_user.instructor? %>
-  <p>and</p>
-   <%= link_to pluralize(@current_user.lessons.count, 'class'),lessons_path %> available.
+  and
+   <%= link_to pluralize(@current_user.lessons.count, 'class'),lessons_path %> available
   <% end %>
   </h2>
 <%end %>

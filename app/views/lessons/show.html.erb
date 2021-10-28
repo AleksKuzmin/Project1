@@ -1,10 +1,15 @@
 
 <h1><%= @lesson.title %></h1>
-<h2><%= @lesson.date %></h2>
-<h2><%= @lesson.time %></h2>
+<ul>
+  <li><%= @lesson.date.strftime '%A, %B %e, %Y' %></li>
+  <li><%= @lesson.time.strftime '%H:%M %p'%></li>
+  <li><%= @lesson.suburb%></li>
+  <li><%= @lesson.postcode%></li>
+
+</ul>
 
 
-<div > <br> <br>
+<div >
         <h3>Location</h3>
         <!-- used iframe to display openstreetmap -->
         <iframe width="425" height="350" frameborder="0" scrolling="no"
