@@ -1,0 +1,30 @@
+body {
+  background-color: aliceblue;
+  background-image: url("https://images.unsplash.com/photo-1591228127791-8e2eaef098d3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+footer{
+position: fixed;
+bottom:0;
+right: 0;
+}
+
+.thumb {
+  width: 12em;
+}
+
+@media screen and (max-width:600px){
+  body {
+    background-color: aliceblue;
+  }
+  }
+.div-color {
+  background-color: aliceblue;
+  opacity: 0.5;
+  border: 2px solid black;
+  border-radius: 25px;
+  width: auto;
+  padding: 10px;
+}

@@ -1,22 +1,22 @@
 
-<h1><%= @booking.lesson.title %></h1>
-<%= image_tag @booking.lesson.image, :class => 'thumb' if @booking.lesson.image.present? %>
-<ul>
-  <li>Date: <%= @booking.lesson.date.strftime '%A, %B %e, %Y' %></li>
-  <li>Time: <%= @booking.lesson.time.strftime '%H:%M %p' %></li>
-  <li>Description: <%= @booking.lesson.description%></li>
-  <li>Suburb: <%= @booking.lesson.suburb %>, <%= @booking.lesson.postcode %></li>
-  <li>Your instructor: <%= @booking.lesson.contact %></li>
-</ul>
+  <h1><%= @booking.lesson.title %></h1>
+  <div class="div-color">
+  <%= image_tag @booking.lesson.image, :class => 'thumb' if @booking.lesson.image.present? %>
 
-
-
-<div >
-  <h3>Beach location</h3>
-        <!-- used iframe to display openstreetmap -->
-    <iframe width="425" height="350" frameborder="0" scrolling="no"
-      marginheight="0" marginwidth="0"
-      src="https://www.openstreetmap.org/export/embed.html?bbox=<%= @bbox %>&amp;layer=mapnik&amp;marker=<%= @marker%>"
-      style="border: 1px solid black">
-    </iframe>
-</div>
+  <ul>
+    <li>Date: <%= @booking.lesson.date.strftime '%A, %B %e, %Y' %></li>
+    <li>Time: <%= @booking.lesson.time.strftime '%H:%M %p' %></li>
+    <li>Description: <%= @booking.lesson.description%></li>
+    <li>Suburb: <%= @booking.lesson.suburb %>, <%= @booking.lesson.postcode %></li>
+    <li>Your instructor: <%= @booking.lesson.contact %></li>
+  </ul>
+ </div>
+  <div >
+    <h3>Beach location</h3>
+          <!-- used iframe to display openstreetmap -->
+      <iframe width="425" height="350" frameborder="0" scrolling="no"
+        marginheight="0" marginwidth="0"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=<%= @bbox %>&amp;layer=mapnik&amp;marker=<%= @marker%>"
+        style="border: 1px solid black">
+      </iframe>
+  </div>

@@ -4,41 +4,77 @@
     <title>Yoga4</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
   <body>
     <div class="container">
-    <nav>
-      <%= link_to "Home", root_path %>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href=<%=root_path %>> Home <span class="sr-only">(current)</span></a>
+            </li>
+            <% if @current_user.present? %>
+            <% if @current_user.admin? %>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= users_path %>>All users</a>
+            </li>
+            <%end %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Your stuff
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href=<%= new_booking_path %>>New bookings</a>
+                <% if @current_user.present? && @current_user.instructor? %>
+                <%= link_to "New Classes", new_lesson_path, :class => "dropdown-item" %>
+                <% end %>
+                <a class="dropdown-item" href=<%=  edit_user_path(@current_user) %>>Your profile</a>
+                <%= link_to "Log out #{ @current_user.email}", login_path, :method => 'delete', :class =>"dropdown-item" %>
+              </div>
+            </li>
+            <% else %>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= new_user_path %>>Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= login_path %>>Sign in</a>
+            </li>
+            <% end %>
 
-      <% if @current_user.present? %>
-      <% if @current_user.admin? %>
-      <%= link_to "All users", users_path %>
-      <% end %>
+          </ul>
 
+        </div>
+      </nav>
 
-      <%= link_to "New bookings", new_booking_path %>
-      <%= link_to "Your profile", edit_user_path(@current_user) %>
-      <%= link_to "Log out #{ @current_user.email}", login_path, :method => 'delete' %>
-      <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Sign in", login_path %>
-      <% end %>
-
-
-      <% if @current_user.present? && @current_user.instructor? %>
-      <%= link_to "New Classes", new_lesson_path %>
-      <% end %>
-
-
-    </nav>
 </div>
-
+  <div class="container">
     <%= yield %>
+  </div>
+    <footer>
+      <nav class="navbar navbar-expand-lg" id='footer'>
+        <a class="navbar-brand" href="https://www.facebook.com/groups/1796384610660298" target='_blank'>
+          <div class="text-center">
+            <img src="https://i.imgur.com/fFIzW9y.png" class="rounded" alt="Facebook" width='35' height='35'>
+          </div>
+        </a>
+        <a class="navbar-brand" href='https://www.instagram.com/aleckuzman/' target='_blank'>
+          <div class="text-center">
+            <img src="https://i.imgur.com/x1ZL1Ab.png" class="rounded" alt="Instagram" width='35' height='35'>
+          </div>
+        </a>
+        <a class="navbar-brand" href='https://www.youtube.com/watch?v=PkX_cPuS92c&ab_channel=IyengarYogaMaidaVale/UC__IHhHuwMtGl5zfjD-Tu4g' target='_blank'>
+          <div class="text-center">
+            <img src="https://i.imgur.com/ahMyH95.png" class="rounded" alt="Youtube" width='35' height='35'>
+          </div>
+        </a>
+    </nav>
+  </footer>
   </body>
+
 </html>

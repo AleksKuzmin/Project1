@@ -1,21 +1,37 @@
-<%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+<div class="div-color">
+  <%= form_for @user do |f| %>
+
+
+  <div class="form-group">
+    <%= label_tag :email %>
+    <%= email_field_tag :email,nil,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
   <%= f.label :address %>
-  <%= f.text_field :address %>
+  <%= f.text_field :address,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
   <%= f.label "Phone number:" %>
-  <%= f.number_field :phonenumber %>
+  <%= f.number_field :phonenumber, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
   <%= f.label :about %>
-  <%= f.text_field :about %>
+  <%= f.text_field :about,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
   <%= f.label :image %>
-  <%= f.text_field :image %>
+  <%= f.text_field :image, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
   <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.label :dob %>
-  <%= f.date_field :dob %>
+  <%= f.text_field :location,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label "Date of Birth" %>
+  <%= f.date_field :dob,:class => 'form-control' %>
+  </div>
 
-
-  <%= f.submit %>
+  <%= f.submit "Edit profile", :class => 'btn btn-info btn-lg'%>
 <% end %>
+
+</div>

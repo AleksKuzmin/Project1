@@ -1,5 +1,6 @@
-<h1>All Users</h1>
 
+<h1>All Users</h1>
+<div class="div-color">
 <h2>You have <%= User.count %> users </h2>
 
 <% @users.each do |user| %>
@@ -7,7 +8,7 @@
 
 <%= image_tag user.image, :class => 'thumb' if user.image.present? %>
 <ul>
-  <li>Name: <%= link_to user.name, user %></li>
+  <li>Name: <%= user.name %></li>
   <% if user.dob.present? %>
   <li>Date of birth: <%= user.dob.strftime '%A, %B %e, %Y' %></li>
   <% end %>
@@ -18,10 +19,5 @@
   <% end %>
 </li>
 </ul>
-
-
-
-
-
-
 <% end %>
+</div>

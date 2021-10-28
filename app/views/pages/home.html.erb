@@ -1,15 +1,12 @@
 <% if @current_user.present?%>
-
-<h1>Namaste <%= link_to @current_user.name, user_path(@current_user.id) %>!</h1>
-
-<%= image_tag @current_user.image, :class => 'thumb' if @current_user.image.present? %>
-
-
-<h2> You have got <%=link_to pluralize(@current_user.bookings.count,    'booking'), bookings_path  %>
-
-  <% if @current_user.instructor? %>
+<div class="jumbotron container">
+  <h1 class="display-4">Namaste <%= link_to @current_user.name, user_path(@current_user.id) %>!</h1>
+  <p class="lead">"Inhale the future, exhale the past."</p>
+  <hr class="my-4">
+  <p>You have got <%=link_to pluralize(@current_user.bookings.count,    'booking'), bookings_path  %>
+    <% if @current_user.instructor? %>
   and
    <%= link_to pluralize(@current_user.lessons.count, 'class'),lessons_path %> available
-  <% end %>
-  </h2>
-<%end %>
+  <% end %></p>
+  <%end %>
+</div>

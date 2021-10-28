@@ -1,5 +1,9 @@
+<div class="div-color">
 <%= form_for @booking do |f| %>
+<div class="form-group">
   <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.submit %>
+  <%= f.text_field :title ,:class => 'form-control'%>
+</div>
+  <%= f.submit, :class => "btn btn-info" %>
 <% end %>
+</div>

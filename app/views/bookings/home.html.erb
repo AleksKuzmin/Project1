@@ -1,8 +1,9 @@
-<h1>Namaste, <%= @current_user.email %>!</h1>
-<h2> You have got <%= pluralize(@current_user.bookings.count, 'booking')  %> available.</h2>
-
-<% @bookings.each do |booking| %>
-<p>
-<%= booking.title %>
-</p>
-<% end %>
+  <h1>Namaste, <%= @current_user.email %>!</h1>
+  <div class="div-color">
+    <h2> You have got <%= pluralize(@current_user.bookings.count, 'booking')  %> available.</h2>
+    <% @bookings.each do |booking| %>
+    <p>
+    <%= booking.title %>
+    </p>
+  <% end %>
+  </div>

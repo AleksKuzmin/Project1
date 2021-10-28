@@ -1,23 +1,34 @@
+
 <h1>Sign up!</h1>
+<div class="div-color">
+    <% if @user.errors.any? %>
+    <ol>
+      <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ol>
+    <% end %>
 
 
-<% if @user.errors.any? %>
-<ol>
-  <% @user.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-</ol>
-<% end %>
+    <%= form_for @user do |f| %>
 
+    <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, :class => 'form-control'%>
+    </div>
+    <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+    <%= f.label "Are you an instructor?" %>
+    <%= f.check_box :instructor%>
+    </div>
 
-<%= form_for @user do |f| %>
-<%= f.label :email %>
-<%= f.email_field :email %>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %>
-<%= f.label "Are you an instructor?" %>
-<%= f.check_box :instructor%>
-<%= f.submit "Sign up" %>
-<% end %>
+    <%= f.submit "Sign up", :class => "btn btn-info" %>
+    <% end %>}
+</div>

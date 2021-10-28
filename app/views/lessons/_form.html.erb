@@ -1,13 +1,26 @@
-<%= form_for @lesson do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
-  <%= f.label :time %>
-  <%= f.time_field :time %>
-  <%= f.label :suburb %>
-  <%= f.text_field :suburb %>
-  <%= f.label :postcode %>
-  <%= f.number_field :postcode%>
-  <%= f.submit %>
-<% end %>
+<div class="div-color">
+  <%= form_for @lesson do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date %>
+    <%= f.date_field :date,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :time %>
+    <%= f.time_field :time,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :suburb %>
+    <%= f.text_field :suburb,:class => 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :postcode %>
+    <%= f.number_field :postcode,:class => 'form-control'%>
+  </div>
+    <%= f.submit "Edit class", :class => "btn btn-info" %>
+  <% end %>
+</div>

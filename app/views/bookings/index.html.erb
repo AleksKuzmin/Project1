@@ -1,11 +1,12 @@
-<h1>All bookings</h1>
 
-<h1>Namaste, <%= @current_user.email %>!</h1>
+
+<h1>All bookings</h1>
+<div class="div-color">
+<h1>Namaste, <%= @current_user.name %>!</h1>
 <h2> You have got <%= pluralize(@current_user.bookings.count, 'booking')  %> available.</h2>
 
 <% @current_user.bookings.each do |booking| %>
 <p><%= booking.lesson.title %></p>
-
 <div class=“controls”>
   <%= link_to "View booking", booking%>
   <%= link_to "Edit booking", edit_booking_path(booking) %>
@@ -13,3 +14,4 @@
 
 </div>
 <% end %>
+</div>

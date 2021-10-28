@@ -1,27 +1,44 @@
-<% if @current_user.present?%>
-<h1>New Classes</h1>
+<div class="div-color">
+  <% if @current_user.present?%>
+  <h1>New class</h1>
 
 
-<%= form_for @lesson do |f| %>
-<%= f.label :image %>
-<%= f.text_field :image %>
-<%= f.label "Class" %>
-<%= f.text_field :title %>
-<%= f.label :date %>
-<%= f.date_field :date %>
-<%= f.label :time %>
-<%= f.time_field :time %>
-<%= f.label :description %>
-<%= f.text_field :description %>
-<%= f.label :suburb %>
-<%= f.text_field :suburb %>
-<%= f.label :postcode %>
-<%= f.number_field :postcode%>
+  <%= form_for @lesson do |f| %>
+  <div class="form-group">
+  <%= f.label :image %>
+  <%= f.text_field :image,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label "Class" %>
+  <%= f.text_field :title,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :date %>
+  <%= f.date_field :date,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :time %>
+  <%= f.time_field :time,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :description %>
+  <%= f.text_field :description ,:class => 'form-control'%>
+  </div>
+  <div class="form-group">
+  <%= f.label :suburb %>
+  <%= f.text_field :suburb,:class => 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :postcode %>
+  <%= f.number_field :postcode,:class => 'form-control'%>
+  </div>
+  <div class="form-group">
+  <%= f.label "Your instructor" %>
+  <%= f.text_field :contact,:class => 'form-control' %>
+  </div>
 
 
-
-<%= f.submit "Create a new class" %>
-<% end %>
-
-
-<% end %>
+  <%= f.submit "Create a new class", :class => "btn btn-info" %>
+  <% end %>
+  <% end %>
+</div>
