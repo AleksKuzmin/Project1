@@ -1,10 +1,11 @@
-<h1>New booking</h1>
+
 <div class="div-color">
-<%= form_for @booking do |f| %>
-<div class="custom-file">
-<%= f.label "Class"%>
-<%= f.select :lesson_id, Lesson.pluck(:title, :id), :include_blank => true, :class => 'custom-select custom-select-lg'%>
-</div>
-<%= f.submit "Make a new booking" , :class => "btn btn-info"%>
-<% end %>
+  <h1>New booking</h1>
+  <%= form_for @booking do |f| %>
+  <div class="custom-file">
+  <%= f.label "Class"%>
+  <%= f.select :lesson_id, Lesson.pluck(:title, :id), :include_blank => true, :class => 'custom-select custom-select-lg'%>
+  </div>
+  <%= f.submit "Make a new booking" , :class => "btn btn-info"%>
+  <% end %>
 </div>
