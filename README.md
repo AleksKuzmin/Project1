@@ -1,4 +1,4 @@
-# Nomad Art Group Website
+# Yoga4
 
 This is an app for connecting yoga teachers and students named "Yoga4". User student can visit the website, check available classes and classes's location, and make as many bookings as they like. User instructor can create, edit and delete classes.
 User can sign in and sign out. An admin can see all users and remove them if needed it
