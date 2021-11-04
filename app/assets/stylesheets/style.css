@@ -4,12 +4,13 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  min-height: 100vh;
 }
 
 footer{
-position: fixed;
-bottom:0;
-right: 0;
+  position: fixed;
+  bottom:0;
+  right: 0;
 }
 
 
@@ -17,10 +18,10 @@ right: 0;
   width: 12em;
 }
 .controls {
-display: flex;
-flex-wrap: wrap;
-gap: 10px;
-padding-bottom: 5%
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 5%
 }
 
 h1 {
